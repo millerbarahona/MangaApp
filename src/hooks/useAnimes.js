@@ -20,4 +20,4 @@ export function useAnimes({ title } = { title: "avengers" }) {
     [title, setAnimes]
   );
   return { loading, animes };
-}
+} 

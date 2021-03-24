@@ -1,9 +1,10 @@
 .lds-ring {
   display: inline-block;
   position: relative;
-  margin: 0 auto;
+  margin-left: 100 auto;
   width: 80px;
   height: 80px;
+  vertical-align: middle;
 }
 
 .lds-ring div {
