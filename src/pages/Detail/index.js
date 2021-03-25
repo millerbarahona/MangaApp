@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import SearchMangaById from "../../services/searchMangaById";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import {Link, path, useRouter} from 'wouter'
+import {Link, useHistory, useParams} from 'react-router-dom'
 
 
 export default function Detail({ params }) {
-  const router = useRouter();
-  router.lastTransition = { path: "..." };
-  console.log(router.lastTransition = { path: "/Manga/:title" });
   const [manga, setManga] = useState([{},[]]);
+  const mal_id= useParams().mal_id
+
   useEffect(function () {
-    SearchMangaById({ mal_id: params.mal_id }).then((mangaRes) => {
+    SearchMangaById({ mal_id: mal_id }).then((mangaRes) => {
       setManga(mangaRes)
     });
   },[]);
@@ -27,8 +26,8 @@ export default function Detail({ params }) {
       <h1>{manga[0].score}</h1>
       <hr/>
       <h1>Generos</h1>
-      {manga[1].map((genero)=>(
-          <div>
+      {manga[1].map((genero,index)=>(
+          <div key={index}>
             <h1>{genero.name}</h1>
           </div>
       ))}

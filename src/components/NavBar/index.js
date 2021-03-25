@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AppBar, Toolbar } from "@material-ui/core";
 import { useAnimes } from "../../hooks/useAnimes";
 import { useMangas } from "../../hooks/useMangas";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import CameraOutlinedIcon from "@material-ui/icons/CameraOutlined";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -80,18 +80,19 @@ export default function NavBar(props) {
   const [title, setTitle] = useState("");
     const { loading, animes } = useAnimes(estado==='anime'?{ title }:{...title}) //si el estado es anime se cambia al title nuevo, si no se deja el anterior
     const { loading1, mangas } = useMangas(estado==='manga'?{ title }:{...title}) //si el estado es manga se cambia al title nuevo, si no se deja el anterior
-  const [path, pushLocation] = useLocation();
+  //const [path, pushLocation] = useLocation();
+  const {push} =useHistory() //para 
   const estilos = useStyles();
   const classes = useStyles();
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     setTitle(evt.target.value);
     const estado = props.estado || 'anime'
     if(estado==='anime'){
-      pushLocation(`/Anime/${title}`);
+      push(`/Anime/${title}`)
     }else if(estado==='manga'){
-      pushLocation(`/Manga/${title}`);
+      
+      push(`/Manga/${title}`);
     }
     
   };
@@ -104,7 +105,7 @@ export default function NavBar(props) {
     <div className={classes.grow}>
       <AppBar>
         <Toolbar className="container mx-auto">
-          <Link href="/">
+          <Link to="/">
             <Typography variant="h6" color="inherit" className="cursor-pointer">
               MangApp
             </Typography>
@@ -129,7 +130,7 @@ export default function NavBar(props) {
 
           <div className="flex flex-row-reverse w-full">
             <div className="">
-              <Link href="/Manga" >
+              <Link to="/Manga" >
                 <Typography variant="h6" color="inherit" className="cursor-pointer">
                   Manga
                 </Typography>
@@ -137,7 +138,7 @@ export default function NavBar(props) {
               </div>
               <div className="w-4"></div>
               <div>
-              <Link href="/Anime">
+              <Link to="/Anime">
                 <Typography variant="h6" color="inherit" className="cursor-pointer">
                   Anime
                 </Typography>
@@ -150,3 +151,4 @@ export default function NavBar(props) {
     </div>
   );
 }
+

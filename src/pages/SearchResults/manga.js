@@ -4,12 +4,13 @@ import ListOfMangas from '../../components/ListOfMangas'
 import {useMangas} from '../../hooks/useMangas'
 import NavBar from "../../components/NavBar/index";
 import '../../components/ListOfAnimes/estilos.css'
+import { useParams } from 'react-router';
 
 export default function SearchMangas ({params}){
-    const {title} = params
+    const {title} = useParams()
     const {loading1, mangas} = useMangas({title})
     const tipo='manga'
-    
+    console.log(title);
     return <>
     <NavBar position="static" estado={tipo}/>
       {loading1

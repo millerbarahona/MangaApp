@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'wouter'
+import {Link} from 'react-router-dom'
 import './estilos.css'
 
 export default function Anime({ mal_id, title, image_url, publishing, caps}) {
