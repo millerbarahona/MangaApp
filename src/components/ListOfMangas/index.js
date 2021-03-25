@@ -2,6 +2,7 @@ import React from "react";
 import Manga from "../Manga/index";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import './estilos.css'
+
 export default function ListOfMangas({ mangas }) {
   let i=0
   return (

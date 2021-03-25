@@ -1,0 +1,19 @@
+.contenedor{
+  text-align: center;
+}
+.contenedor img{
+  display: block;
+}
+.contenedor div{
+  position: relative;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.contenedor span{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+    
+}

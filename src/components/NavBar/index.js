@@ -96,7 +96,8 @@ export default function NavBar(props) {
     
   };
   const handleChange = (evt) => {
-    setTitle(evt.target.value);
+    const titulo= evt.target.value
+    setTitle(titulo);
   };
 
   return (
