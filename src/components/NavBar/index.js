@@ -90,11 +90,9 @@ export default function NavBar(props) {
     const estado = props.estado || 'anime'
     if(estado==='anime'){
       push(`/Anime/${title}`)
-    }else if(estado==='manga'){
-      
+    }else if(estado==='manga'){      
       push(`/Manga/${title}`);
     }
-    
   };
   const handleChange = (evt) => {
     const titulo= evt.target.value

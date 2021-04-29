@@ -1,19 +1,25 @@
-.contenedor{
+.contenedor {
   text-align: center;
 }
-.contenedor img{
+.contenedor img {
   display: block;
 }
-.contenedor div{
+.contenedor div {
   position: relative;
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
-.contenedor span{
+.contenedor div .estado {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-    
+}
+ 
+.contenedor div .puntaje{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
 }

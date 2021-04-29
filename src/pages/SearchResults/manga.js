@@ -10,7 +10,7 @@ export default function SearchMangas ({params}){
     const {title} = useParams()
     const {loading1, mangas} = useMangas({title})
     const tipo='manga'
-    console.log(title);
+    console.log();
     return <>
     <NavBar position="static" estado={tipo}/>
       {loading1

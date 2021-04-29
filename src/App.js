@@ -4,9 +4,10 @@ import Home from "./pages/Home/index";
 import SearchResults from "./pages/SearchResults";
 import SearchMangas from "./pages/SearchResults/manga";
 import Detail from "./pages/Detail";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useHistory} from "react-router-dom";
 
 function App() {
+  
   return (
     <div>
       <Router>
